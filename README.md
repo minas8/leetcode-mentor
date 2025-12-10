@@ -20,7 +20,7 @@ The service is designed as part of an upcoming mentor-driven coding practice sys
 ---
 
 ## 📡 REST Endpoints
-| Method |                  Endpoint                   |                   Description                    |
+| Method | Endpoint                   | Description                    |
 |--------|---------------------------------------------|--------------------------------------------------|
 | `GET` | `/leetcode/problems`                         | Returns all problems, optional difficulty filter |
 | `GET` | `/leetcode/problems/difficulty/{difficulty}` | Returns problems filtered by difficulty          |
