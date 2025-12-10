@@ -39,11 +39,11 @@ The service is designed as part of an upcoming mentor-driven coding practice sys
 ---
 
 ## 🏗 Project Structure
-/controller → REST controllers
-/service → Business logic
-/domain → Domain models (clean architecture)
-/infrastructure → LeetCode API client
-/exception → Global exception handling
+- /controller → REST controllers
+- /service → Business logic
+- /domain → Domain models (clean architecture)
+- /infrastructure → LeetCode API client
+- /exception → Global exception handling
 
 ---
 
