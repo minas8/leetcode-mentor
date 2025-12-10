@@ -38,6 +38,12 @@ public class LeetCodeController {
     public Mono<Page<Problem>> getProblemsPaged(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "20") int size) {
+        if(page < 0) {
+            return Mono.error(new IllegalArgumentException("Page index cannot be negative"));
+        }
+        if(size < 1) {
+            return Mono.error(new IllegalArgumentException("Page size must be greater than 0"));
+        }
         return problemService.getProblemsPaged(page,size);
     }
 
