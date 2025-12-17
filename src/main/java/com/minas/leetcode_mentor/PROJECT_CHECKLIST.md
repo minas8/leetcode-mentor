@@ -8,8 +8,8 @@
 - [x] Fetch problem by difficulty / paged
 - [x] Domain models
 - [x] DTO mapping
-- [x] Basic caching
+- [x] Basic caching (list + single problem)
 - [x] Global error handling
-- [ ] Single problem by ID
-- [ ] README polish
-- [ ] Add architecture diagram  
+- [x] Single problem by ID
+- [x] README polish
+- [x] Add architecture diagram
