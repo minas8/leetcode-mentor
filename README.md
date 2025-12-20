@@ -8,23 +8,35 @@ The service is designed as part of an upcoming mentor-driven coding practice sys
 
 ---
 
+## 🧩 Architecture
+
+![Architecture Diagram](docs/architecture.png)
+
+The service follows a clean layered architecture:
+Controller → Service → Infrastructure (Client + Cache)
+
+---
+
 ## ✨ Features (MVP)
-- Fetch problems from LeetCode's GraphQL endpoint  
+- Fetch problems from LeetCode's GraphQL endpoint
 - Domain-layer modeling (Problem, DifficultyLevel, more coming soon)
 - DTO → Domain mapping
 - In-memory caching (prevents repeated external calls)
 - Paging support `/paged?page=x&size=y`
 - Difficulty filtering (query param + path param)
 - Global exception handling with structured error responses
+- Fetch single problem by ID (full content + tags)
+
 
 ---
 
 ## 📡 REST Endpoints
-| Method | Endpoint                   | Description                    |
-|--------|---------------------------------------------|--------------------------------------------------|
+ש| Method | Endpoint                                     | Description                    |
+|--------|----------------------------------------------|--------------------------------------------------|
 | `GET` | `/leetcode/problems`                         | Returns all problems, optional difficulty filter |
 | `GET` | `/leetcode/problems/difficulty/{difficulty}` | Returns problems filtered by difficulty          |
 | `GET` | `/leetcode/problems/paged?page=&size=`       | Returns pageable list of problems                |
+| `GET` | `/leetcode/problems/{id}`                    | Returns full problem details by ID |
 
 ---
 

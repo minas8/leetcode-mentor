@@ -4,6 +4,7 @@ import com.minas.leetcode_mentor.application.services.LeetCodeProblemService;
 import com.minas.leetcode_mentor.domain.common.Page;
 import com.minas.leetcode_mentor.domain.problem.DifficultyLevel;
 import com.minas.leetcode_mentor.domain.problem.Problem;
+import com.minas.leetcode_mentor.domain.problem.SingleProblem;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,7 +39,19 @@ public class LeetCodeController {
     public Mono<Page<Problem>> getProblemsPaged(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "20") int size) {
+        if(page < 0) {
+            return Mono.error(new IllegalArgumentException("Page index cannot be negative"));
+        }
+        if(size < 1) {
+            return Mono.error(new IllegalArgumentException("Page size must be greater than 0"));
+        }
         return problemService.getProblemsPaged(page,size);
+    }
+
+    /// Type of Path Param
+    @GetMapping("/leetcode/problems/{id}")
+    public Mono<SingleProblem> getProblemsById(@PathVariable String id) {
+        return problemService.getSingleProblemById(id);
     }
 
 }
