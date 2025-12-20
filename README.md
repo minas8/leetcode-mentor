@@ -31,7 +31,7 @@ Controller → Service → Infrastructure (Client + Cache)
 ---
 
 ## 📡 REST Endpoints
-| Method | Endpoint                                     | Description                    |
+ש| Method | Endpoint                                     | Description                    |
 |--------|----------------------------------------------|--------------------------------------------------|
 | `GET` | `/leetcode/problems`                         | Returns all problems, optional difficulty filter |
 | `GET` | `/leetcode/problems/difficulty/{difficulty}` | Returns problems filtered by difficulty          |
@@ -60,11 +60,11 @@ Controller → Service → Infrastructure (Client + Cache)
 ---
 
 ## 🚧 Roadmap (Coming Soon)
-- Redis distributed caching
-- Fetch problem details by ID
-- Tag filtering
-- Integration with Judge0 for code execution
-- Multi-service architecture (CodeExecutor service)
+- Redis distributed caching  
+- Fetch problem details by ID  
+- Tag filtering  
+- Integration with Judge0 for code execution  
+- Multi-service architecture (CodeExecutor service)  
 - CLI tool (MCP-based)
 
 ---
