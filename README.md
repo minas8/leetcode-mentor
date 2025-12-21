@@ -15,6 +15,9 @@ The service is designed as part of an upcoming mentor-driven coding practice sys
 The service follows a clean layered architecture:
 Controller → Service → Infrastructure (Client + Cache)
 
+An optional MCP adapter service (Python/FastAPI) is provided to expose backend capabilities as MCP tools.
+
+
 ---
 
 ## ✨ Features (MVP)
@@ -26,12 +29,12 @@ Controller → Service → Infrastructure (Client + Cache)
 - Difficulty filtering (query param + path param)
 - Global exception handling with structured error responses
 - Fetch single problem by ID (full content + tags)
-
+- MCP-compatible adapter service (Python/FastAPI)
 
 ---
 
 ## 📡 REST Endpoints
-ש| Method | Endpoint                                     | Description                    |
+| Method | Endpoint                                     | Description                    |
 |--------|----------------------------------------------|--------------------------------------------------|
 | `GET` | `/leetcode/problems`                         | Returns all problems, optional difficulty filter |
 | `GET` | `/leetcode/problems/difficulty/{difficulty}` | Returns problems filtered by difficulty          |
@@ -66,6 +69,14 @@ Controller → Service → Infrastructure (Client + Cache)
 - Integration with Judge0 for code execution  
 - Multi-service architecture (CodeExecutor service)  
 - CLI tool (MCP-based)
+
+---
+
+## MCP Adapter (Optional)
+This project includes a minimal MCP-compatible Python server that exposes
+tools for interacting with the LeetCode Mentor backend service.
+
+The MCP server acts as a thin adapter layer and does not contain business logic.
 
 ---
 
